@@ -111,6 +111,9 @@ while semester_sentinel != 'N':
 
         # The following block of code is written with the format of "course_attributes.append(attribute)" to organize information into a list. The
         # list is paired with a dictionary key (denoted by course_name) as a value to create a key:value pair entry for the class.
+#         course_major.course_major = course_major 
+#         course_major.set_major(course_major) 
+        
         course_attributes.append(course_major)
         course_attributes.append(course_grade)
         course_attributes.append(course_hours)
@@ -127,7 +130,9 @@ while semester_sentinel != 'N':
             courses[course_name] = course_attributes
         
         # The following start_word variable and input allow the user to end submittal of course information when desired.
-        course_sentinel = str.upper(input("Enter \'N\' to end this semester. Enter any other character to continue this semester: "))
+        user_char_input = str.upper(input("Enter \'N\' to end this semester. Enter any other character to continue this semester: "))
+        if user_char_input == 'N': 
+            break 
     
     # This block of code runs in the outer loop, and computes the semester gpa and immediately returns it to the user. 
     # This gpa is then archived to the "semester_gpa_archive" dictionary for printing on completion of the program
